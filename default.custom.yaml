@@ -1,0 +1,9 @@
+patch:
+  # 覆写默认配置, 必须用 "path/config" 的格式, 否则会直接清零其他所有项
+
+  # 激活方案
+  schema_list:
+    - schema: rime_mint
+
+  # 仅单个方案, 不进行折叠
+  switcher/fold_options: false

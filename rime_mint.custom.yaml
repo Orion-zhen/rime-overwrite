@@ -1,0 +1,58 @@
+# 覆盖薄荷输入法的默认配置
+patch:
+  # 候选项
+  menu:
+    page_size: 10
+
+  switches/@last:
+    name: ascii_punct
+    states: ["。，", ".,"]
+    # 默认英文标点
+    reset: 1
+
+  # 语法模型
+  # 前往 https://github.com/amzxyz/RIME-LMDG/releases 下载 .gram 文件 并移动到配置目录下
+  grammar/language: wanxiang-lts-zh-hans
+  # 配对词组长度范围
+  grammar/collocation_max_length: 5
+  grammar/collocation_min_length: 2
+
+  # translator内加载
+  translator/contextual_suggestions: true
+  # 同音字词覆盖数量
+  translator/max_homophones: 7
+  translator/max_homographs: 7
+
+  key_binder/bindings:
+    - { accept: "Control+Shift+E", toggle: emoji_suggestion, when: always }
+    - { accept: "Control+Shift+exclam", toggle: transcription, when: has_menu }
+    - { accept: "Control+Shift+1", toggle: transcription, when: has_menu }
+    - { accept: minus, send: Page_Up, when: paging } # 使用`-`进行向上翻页（第一页时候无效）
+    - { accept: equal, send: Page_Down, when: has_menu } # 使用`=`进行向下翻页
+    - { when: composing, accept: Control+p, send: Up }
+    - { when: composing, accept: Control+n, send: Down }
+    - { when: composing, accept: Control+b, send: Left }
+    - { when: composing, accept: Control+f, send: Right }
+    - { when: composing, accept: Control+a, send: Home }
+    - { when: composing, accept: Control+e, send: End }
+    - { when: composing, accept: Control+d, send: Delete }
+    - { when: composing, accept: Control+k, send: Shift+Delete }
+    - { when: composing, accept: Control+g, send: Escape }
+    - { when: composing, accept: Alt+v, send: Page_Up }
+    - { when: composing, accept: Control+v, send: Page_Down }
+    - { when: composing, accept: ISO_Left_Tab, send: Shift+Left }
+    - { when: composing, accept: Shift+Tab, send: Shift+Left }
+    - { when: composing, accept: Tab, send: Shift+Right }
+    - { when: paging, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: paging, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { when: predicting, accept: comma, send: comma }
+    - { when: predicting, accept: period, send: period }
+    - { when: always, accept: Control+Shift+1, select: .next }
+    - { when: always, accept: Control+Shift+2, toggle: ascii_mode }
+    - { when: always, accept: Control+Shift+3, toggle: full_shape }
+    - { when: always, accept: Control+Shift+4, toggle: transcription }
+    - { when: always, accept: Control+Shift+5, toggle: extended_charset }
+    - { when: always, accept: Shift+space, toggle: full_shape }
+    - { when: always, accept: Control+period, toggle: ascii_punct } # crtl + . 切换中英标点
