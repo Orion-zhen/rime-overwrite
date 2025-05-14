@@ -40,4 +40,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
         https://raw.githubusercontent.com/Orion-zhen/rime-overwrite/refs/heads/main/squirrel.custom.yaml
 fi
 
+echo "Downloading WanXiang model"
+curl -fsSL https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram \
+     -o "$config_path/wanxiang-lts-zh-hans.gram"
+
 echo "Setup completed successfully!"
