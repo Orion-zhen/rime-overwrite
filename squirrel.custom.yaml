@@ -1,0 +1,40 @@
+# 覆盖鼠须管默认GUI配置
+patch:
+  style/color_scheme: purity_of_essence
+  style/color_scheme_dark: purity_of_form
+  # 比较喜欢的: google, purity_of_essence, purity_of_form, psionics, luna, native, mint_dark_blue
+
+  # brew install font-maple-mono-nf
+  style/font_face: "Maple Mono NF, PingFang SC"
+  style/font_point: 14
+
+  style/candidate_list_layout: linear
+  style/show_paging: true
+  style/remember_size: true
+  style/translucency: true
+
+  # 特定App默认中/英文输入
+  app_options:
+    com.apple.Spotlight: # 聚焦搜索
+      ascii_mode: true # true默认英文,false默认中文
+    com.runningwithcrayons.Alfred: # alfred
+      ascii_mode: true
+    com.apple.Terminal: # 终端
+      ascii_mode: true
+    com.microsoft.VSCode: # Visual Studio Code
+      ascii_mode: true
+      ascii_punct: true # 中文状态输出英文标点(半角)
+    com.tencent.Lemon: # 腾讯柠檬
+      ascii_mode: true
+    com.apple.dt.Xcode: # Xcode
+      ascii_mode: true
+    com.nektony.App-Cleaner-SII: # App Cleaner & Uninstaller
+      ascii_mode: true
+    com.xunyong.hapigo: # hapigo
+      ascii_mode: true
+    com.termius-dmg.mac: # termius
+      ascii_mode: true
+    com.raycast.macos: # Raycast
+      ascii_mode: true
+    com.jetbrains.intellij: # idea
+      ascii_mode: true
