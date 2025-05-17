@@ -7,3 +7,7 @@ patch:
 
   # 仅单个方案, 不进行折叠
   switcher/fold_options: false
+
+  # 避免与　VSCode 冲突
+  switcher/hotkeys:
+    - Control+F4
