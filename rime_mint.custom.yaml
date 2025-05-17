@@ -4,11 +4,22 @@ patch:
   menu:
     page_size: 10
 
-  switches/@last:
-    name: ascii_punct
-    states: ["。，", ".,"]
-    # 默认英文标点
-    reset: 1
+  switches:
+    - name: ascii_mode
+      states: ["中", "En"]
+      reset: 0
+    - name: emoji_suggestion
+      states: ["✅", "❌"]
+      reset: 0
+    - name: full_shape
+      states: ["弦", "盈"]
+      reset: 0
+    - name: transcription
+      states: ["简", "繁"]
+      reset: 0
+    - name: ascii_punct
+      states: ["punct", "句读"]
+      reset: 0
 
   # 语法模型
   # 前往 https://github.com/amzxyz/RIME-LMDG/releases 下载 .gram 文件 并移动到配置目录下
